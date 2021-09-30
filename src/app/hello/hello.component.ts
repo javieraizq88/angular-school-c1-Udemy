@@ -11,10 +11,20 @@ export class HelloComponent {
     @Input () public name:string;
     @Output () sayHello:EventEmitter<string> = new EventEmitter<string>();
 
+    public namesList:Array<string> = [];
+    public inputName:string = "";
+
     constructor(){
     };
 
     onNameClick(){
         this.sayHello.emit(`Hello!`);
     }
+
+    addName(){
+        this.namesList.push(this.inputName);
+        this.inputName = "";  // para limpiar el formulario
+        console.log(this.namesList);
+    }
+
 }
