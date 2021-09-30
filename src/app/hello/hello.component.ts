@@ -8,7 +8,7 @@ import { Component } from "@angular/core";
     ]
 })
 export class HelloComponent {
-    public name:string 
+    public name:string;
     constructor(){
         this.name = `Javiera`;
     };
