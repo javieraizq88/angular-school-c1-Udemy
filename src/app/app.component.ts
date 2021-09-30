@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public myName:string = "Javiera"
+  public myName:string = "Javiera";
+
+  onSayHello(message){
+    console.log(message);
+  }
 }
