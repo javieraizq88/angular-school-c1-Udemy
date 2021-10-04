@@ -5,11 +5,14 @@ import { AppComponent } from './app.component';
 
 import { HelloComponent } from "./hello/hello.component";
 import { FormsModule } from '@angular/forms';
+import { UpperCapiitalPipe } from "./hello/upper-capital.pipe";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent
+    HelloComponent,
+    UpperCapiitalPipe
   ],
   imports: [
     BrowserModule,
