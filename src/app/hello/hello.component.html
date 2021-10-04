@@ -1,6 +1,12 @@
-<div *ngIf="namesList.length < 5" >
-    <input type="text" [(ngModel)]="inputName">
-    <button (click)="addName()">Add name</button>
+<div [ngSwitch]="namesList.length < 5">
+    <!-- muestra el formulario por default en true y lo oculta si tengo mas de 5 nombres en la lista-->
+    <div *ngSwitchCase="true">
+        <input type="text" [(ngModel)]="inputName">
+        <button (click)="addName()">Add name</button>
+    </div>
+    <div *ngSwitchCase="false">
+        <p>You can`t add more names</p>
+    </div>
 </div>
 <!-- repite p con el nombre agregado en la lista con un numero del item -->
 <p *ngFor="let item of namesList; index as i" (click)="onNameClick()">
