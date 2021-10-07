@@ -1,11 +1,14 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { GreetingsService } from '../greetings.service';
+
 
 @Component({
     selector: `custom-hello`,
     templateUrl: `./hello.component.html`,
     styleUrls: [
         `./hello.component.css`
-    ]
+    ],
+    providers: [ GreetingsService ]
 })
 export class HelloComponent {
     @Input () public name:string;
@@ -14,10 +17,11 @@ export class HelloComponent {
     public namesList:Array<string> = [];
     public inputName:string = "";
 
-    constructor(){
-    };
+    constructor(private greetings: GreetingsService){
+    }
 
     onNameClick(){
+        console.log("counter in HelloComponent is: ", this.greetings.counter);
         this.sayHello.emit(`Hello!`);
     }
 
